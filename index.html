@@ -186,15 +186,21 @@
             position: absolute;
             inset: 0;
             background: url('images/IMG_2998.jpeg') center center / cover no-repeat;
-            transform: scale(1.05);
-            transition: transform 8s ease;
         }
 
-        .hero-bg.loaded { transform: scale(1); }
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
 
         .hero-overlay {
             position: absolute;
             inset: 0;
+            z-index: 2;
             background: linear-gradient(
                 160deg,
                 rgba(28, 43, 58, 0.55) 0%,
@@ -205,7 +211,7 @@
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
             text-align: center;
             padding: 0 24px;
             max-width: 900px;
@@ -307,7 +313,7 @@
             bottom: 36px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 2;
+            z-index: 3;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -948,6 +954,9 @@
 <!-- ─── HERO ─── -->
 <section id="home" class="hero">
     <div class="hero-bg" id="heroBg"></div>
+    <video class="hero-video" autoplay muted loop playsinline poster="images/IMG_2998.jpeg">
+        <source src="hero.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <span class="hero-label">Isola di Ponza · Via Scotti</span>
@@ -1047,18 +1056,18 @@
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-water"></i></div>
-                <h3>Vista Mare e Porto</h3>
-                <p>Panorami mozzafiato sul porto e sul mare cristallino di Ponza dalle terrazze e dai giardini.</p>
+                <h3>Vista Mare e Cuore dell'isola</h3>
+                <p>Panorami mozzafiato sull'Isola e sul mare cristallino di Ponza dalle terrazze e dai giardini.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-coffee"></i></div>
-                <h3>Colazione Inclusa</h3>
-                <p>Inizia la giornata con una ricca colazione con prodotti locali e homemade.</p>
+                <h3>Colazione sul terrazzo</h3>
+                <p>Inizia la giornata con una colazione sul terrazzo o in giardino, hai tutto l'occorrente per prepararla come a casa tua.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-ship"></i></div>
                 <h3>Servizi Nautici</h3>
-                <p>Assistenza per noleggio barche, gite e consigli per le migliori spiagge dell'isola.</p>
+                <p>Consigli per noleggio barche, gite e per le migliori spiagge dell'isola.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-leaf"></i></div>
@@ -1112,7 +1121,7 @@
             </div>
             <div class="tariffa-card fade-in">
                 <span class="tariffa-stagione">Settimana Intera</span>
-                <div class="tariffa-price"><sup>€</sup>700</div>
+                <div class="tariffa-price"><sup>€</sup>800</div>
                 <div class="tariffa-unit">a settimana</div>
                 <ul class="tariffa-features">
                     <li><i class="fas fa-check"></i> Tutti i servizi inclusi</li>
@@ -1137,18 +1146,15 @@
                 <span class="section-label">Disponibilità</span>
                 <h2 class="section-title">Prenota il tuo <em>soggiorno</em></h2>
                 <div class="divider"></div>
-                <p>Per verificare la disponibilità e ricevere conferma della prenotazione, contattaci direttamente via WhatsApp o telefono. Risponderemo entro poche ore.</p>
+                <p>Per verificare la disponibilità e ricevere conferma della prenotazione, contattaci direttamente via WhatsApp. Risponderemo entro pochi minuti.</p>
                 <p style="font-size:0.9rem;">Le prenotazioni sono confermate con un acconto del 30%. Cancellazione gratuita fino a 30 giorni prima dell'arrivo.</p>
                 <p class="booking-note" style="text-align:left;">🌸 Aperti da <strong>Maggio a Settembre</strong></p>
             </div>
             <div class="booking-actions">
-                <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20informazioni%20su%20La%20Maison%20Fiorita%20a%20Ponza." class="btn btn-whatsapp" target="_blank">
+                <a href="https://wa.me/393398560980?text=Ciao!%20Vorrei%20informazioni%20su%20La%20Maison%20Fiorita%20a%20Ponza." class="btn btn-whatsapp" target="_blank">
                     <i class="fab fa-whatsapp"></i> Scrivici su WhatsApp
                 </a>
-                <a href="tel:+390771123456" class="btn btn-phone">
-                    <i class="fas fa-phone"></i> +39 0771 123456
-                </a>
-                <p class="booking-note">Rispondiamo in italiano e inglese</p>
+                <p class="booking-note">Rispondiamo tutti i giorni 07:00–22:00</p>
             </div>
         </div>
     </div>
@@ -1173,9 +1179,8 @@
             <div class="contact-card">
                 <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
                 <h3>Telefono & WhatsApp</h3>
-                <p>+39 0771 123456</p>
-                <p>+39 333 1234567 (WhatsApp)</p>
-                <a href="https://wa.me/393331234567" class="btn btn-whatsapp" style="margin-top:16px;font-size:0.8rem;padding:12px 24px;" target="_blank">
+                <p>+39 339 856 0980 (WhatsApp)</p>
+                <a href="https://wa.me/393398560980" class="btn btn-whatsapp" style="margin-top:16px;font-size:0.8rem;padding:12px 24px;" target="_blank">
                     <i class="fab fa-whatsapp"></i> Scrivici ora
                 </a>
             </div>
@@ -1205,8 +1210,7 @@
             <h4>Contatti</h4>
             <p>Via Scotti, Isola di Ponza</p>
             <p>04027 Latina, Italia</p>
-            <p style="margin-top:10px;">+39 0771 123456</p>
-            <p>+39 333 1234567</p>
+            <p style="margin-top:10px;">+39 339 856 0980</p>
         </div>
     </div>
     <div class="footer-bottom" style="max-width:1200px;margin:0 auto;">
@@ -1216,7 +1220,7 @@
 </footer>
 
 <!-- ─── WHATSAPP FLOATING ─── -->
-<a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20informazioni%20su%20La%20Maison%20Fiorita." class="wa-float" target="_blank" title="Scrivici su WhatsApp">
+<a href="https://wa.me/393398560980?text=Ciao!%20Vorrei%20informazioni%20su%20La%20Maison%20Fiorita." class="wa-float" target="_blank" title="Scrivici su WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
@@ -1226,12 +1230,8 @@
 </button>
 
 <script>
-    // ── Hero BG lazy load
-    const heroBg = document.getElementById('heroBg');
-    const img = new Image();
-    img.onload = () => heroBg.classList.add('loaded');
-    img.src = 'images/IMG_2998.jpeg';
-    heroBg.style.backgroundImage = `url('images/IMG_2998.jpeg')`;
+    // ── Hero fallback bg (for browsers without video support)
+    document.getElementById('heroBg').style.backgroundImage = `url('images/IMG_2998.jpeg')`;
 
     // ── Header scroll
     const header = document.getElementById('header');
