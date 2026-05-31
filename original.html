@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Maison Fiorita - Residenza Estiva, Isola di Ponza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Stili generali */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Raleway', sans-serif;
+        }
+        
+        body {
+            color: #2c3e50;
+            line-height: 1.6;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3 {
+            color: #1a4b7a;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 3.2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: linear-gradient(90deg, #38b6ff, #2e9cca);
+            border-radius: 2px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #38b6ff 0%, #2e9cca 100%);
+            color: white;
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(56, 182, 255, 0.3);
+            letter-spacing: 0.5px;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #2e9cca 0%, #38b6ff 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(56, 182, 255, 0.4);
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #2e9cca;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #38b6ff;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.05rem;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #38b6ff;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #2e9cca;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('placeholder-hero.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: white;
+            letter-spacing: 1px;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            font-weight: 500;
+        }
+        
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 70px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background: linear-gradient(to bottom, #f8fdff, #e6f4ff);
+            position: relative;
+        }
+        
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .gallery h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #38b6ff;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(56, 182, 255, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            color: #2e9cca;
+            margin-bottom: 20px;
+        }
+        
+        /* Booking Section */
+        .booking {
+            background: linear-gradient(to bottom, #e6f4ff, #f8fdff);
+            position: relative;
+        }
+        
+        .booking-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .booking-form {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a4b7a;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0f0ff;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #38b6ff;
+            outline: none;
+        }
+        
+        .booking-info {
+            flex: 1;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            margin-bottom: 25px;
+        }
+        
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            font-size: 40px;
+            color: #2e9cca;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a4b7a 0%, #2c3e50 100%);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-section h3:after {
+            background: #38b6ff;
+            bottom: -8px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #38b6ff;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .about-content, .booking-container {
+                flex-direction: column;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Elementi decorativi */
+        .sea-bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(56, 182, 255, 0.1);
+            z-index: -1;
+        }
+        
+        .bubble-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+        }
+        
+        .bubble-2 {
+            width: 150px;
+            height: 150px;
+            bottom: 15%;
+            right: 5%;
+        }
+        
+        .bubble-3 {
+            width: 70px;
+            height: 70px;
+            top: 50%;
+            left: 5%;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Elementi decorativi -->
+    <div class="sea-bubble bubble-1"></div>
+    <div class="sea-bubble bubble-2"></div>
+    <div class="sea-bubble bubble-3"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><i class="fas fa-umbrella-beach"></i> La Maison Fiorita</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Chi Siamo</a></li>
+                    <li><a href="#gallery">Galleria</a></li>
+                    <li><a href="#services">Servizi</a></li>
+                    <li><a href="#booking">Prenotazioni</a></li>
+                    <li><a href="#contact">Contatti</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Benvenuti alla Maison Fiorita</h1>
+                <p>Un'oasi di pace nell'incantevole Isola di Ponza</p>
+                <a href="#booking" class="btn">Prenota il tuo soggiorno</a>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>La Nostra Storia</h2>
+                    <p>La Maison Fiorita è una residenza estiva situata in via Scotti, nel cuore della splendida Isola di Ponza. Circondata dalla natura mediterranea e a pochi passi dal mare cristallino, offre un'oasi di pace e tranquillità.</p>
+                    <p>La nostra struttura combina il fascino dell'architettura tradizionale ponzese con il comfort moderno, creando un ambiente accogliente e raffinato per rendere indimenticabile il vostro soggiorno.</p>
+                    <p>Ogni dettaglio è curato con amore per regalarvi un'esperienza autentica, tra profumi di fiori, colori del mediterraneo e la calda ospitalità che ci distingue.</p>
+                    <a href="#gallery" class="btn">Scopri di più</a>
+                </div>
+                <div class="about-image">
+                    <img src="placeholder-about.jpg" alt="Vista della Maison Fiorita">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>La Nostra Galleria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="placeholder-gallery1.jpg" alt="Vista esterna">
+                </div>
+                <div class="gallery-item">
+                    <img src="placeholder-gallery2.jpg" alt="Camera da letto">
+                </div>
+                <div class="gallery-item">
+                    <img src="placeholder-gallery3.jpg" alt="Terrazza vista mare">
+                </div>
+                <div class="gallery-item">
+                    <img src="placeholder-gallery4.jpg" alt="Giardino fiorito">
+                </div>
+                <div class="gallery-item">
+                    <img src="placeholder-gallery5.jpg" alt="Interni design">
+                </div>
+                <div class="gallery-item">
+                    <img src="placeholder-gallery6.jpg" alt="Colazione sull'terrazza">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>I Nostri Servizi</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bed"></i></div>
+                    <h3>Camere Comfortevoli</h3>
+                    <p>Camere spaziose e arredate con gusto, dotate di ogni comfort per garantire un riposo rigenerante.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-water"></i></div>
+                    <h3>Vista Mare</h3>
+                    <p>Goditi panorami mozzafiato sul mare cristallino di Ponza dalle nostre terrazze e dai giardini.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-coffee"></i></div>
+                    <h3>Colazione Includeda</h3>
+                    <p>Inizia la giornata con una ricca colazione servita sul terrazzo con prodotti locali e homemade.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-ship"></i></div>
+                    <h3>Servizi Nautici</h3>
+                    <p>Assistenza per noleggio barche, gite in barca e consigli per le migliori spiagge dell'isola.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Giardino Mediterraneo</h3>
+                    <p>Rilassati nel nostro giardino rigoglioso, ricco di piante aromatiche e fiori tipici del mediterraneo.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h3>Concierge</h3>
+                    <p>Il nostro staff è a disposizione per consigliarti i migliori ristoranti e esperienze sull'isola.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2>Prenota il Tuo Soggiorno</h2>
+            <div class="booking-container">
+                <div class="booking-form">
+                    <form id="prenotazione-form">
+                        <div class="form-group">
+                            <label for="name">Nome e Cognome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefono</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="checkin">Check-in</label>
+                            <input type="date" id="checkin" name="checkin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="checkout">Check-out</label>
+                            <input type="date" id="checkout" name="checkout" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Ospiti</label>
+                            <select id="guests" name="guests" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5+">5+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Messaggio</label>
+                            <textarea id="message" name="message" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Invia Richiesta</button>
+                    </form>
+                </div>
+                <div class="booking-info">
+                    <div class="info-card">
+                        <h3>Informazioni sulla Prenotazione</h3>
+                        <p>Per verificare la disponibilità e ricevere conferma della prenotazione, ti invitiamo a compilare il modulo oppure a contattarci direttamente via telefono o email.</p>
+                        <p>Le prenotazioni sono confermate solo dopo aver ricevuto un acconto del 30% del totale del soggiorno.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Termini di Cancellazione</h3>
+                        <p>Cancellazione gratuita fino a 30 giorni prima dell'arrivo. Oltre questo termine, l'acconto non sarà rimborsato.</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Periodo di Apertura</h3>
+                        <p>La Maison Fiorita è aperta da maggio a settembre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contatti</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Indirizzo</h3>
+                    <p>Via Scotti</p>
+                    <p>Isola di Ponza</p>
+                    <p>04027 Latina, Italia</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Telefono & Email</h3>
+                    <p>+39 0771 123456</p>
+                    <p>+39 333 1234567 (WhatsApp)</p>
+                    <p>info@lamaisonfiorita.it</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon"><i class="fas fa-hashtag"></i></div>
+                    <h3>Social Media</h3>
+                    <p>Seguici sui social per aggiornamenti e offerte speciali</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>La Maison Fiorita</h3>
+                    <p>Residenza estiva di charme nell'incantevole Isola di Ponza, tra natura, mare e ospitalità autentica.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Rapidi</h3>
+                    <p><a href="#home" style="color: #fff;">Home</a></p>
+                    <p><a href="#about" style="color: #fff;">Chi Siamo</a></p>
+                    <p><a href="#gallery" style="color: #fff;">Galleria</a></p>
+                    <p><a href="#booking" style="color: #fff;">Prenotazioni</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contatti</h3>
+                    <p>Via Scotti, Isola di Ponza</p>
+                    <p>Tel: +39 0771 123456</p>
+                    <p>Email: info@lamaisonfiorita.it</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 La Maison Fiorita - Tutti i diritti riservati</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Gestione invio form
+        document.getElementById('prenotazione-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Grazie per la tua richiesta! Ti contatteremo al più presto per confermare la disponibilità.');
+            this.reset();
+        });
+        
+        // Smooth scrolling per i link di navigazione
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animazione bolle
+        document.addEventListener('mousemove', function(e) {
+            const bubbles = document.querySelectorAll('.sea-bubble');
+            bubbles.forEach(bubble => {
+                const speed = parseInt(bubble.style.width) / 10;
+                const x = (window.innerWidth - e.pageX * speed) / 100;
+                const y = (window.innerHeight - e.pageY * speed) / 100;
+                bubble.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
