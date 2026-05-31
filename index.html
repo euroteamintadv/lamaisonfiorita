@@ -185,16 +185,14 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: url('images/IMG_2998.jpeg') center center / cover no-repeat;
+            background: url('images/hero_alba.jpeg') center center / cover no-repeat;
+            animation: kenburns 12s ease-in-out infinite alternate;
+            transform-origin: 60% 50%;
         }
 
-        .hero-video {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
+        @keyframes kenburns {
+            0%   { transform: scale(1.08) translateX(0px); }
+            100% { transform: scale(1.0) translateX(-20px); }
         }
 
         .hero-overlay {
@@ -954,9 +952,6 @@
 <!-- ─── HERO ─── -->
 <section id="home" class="hero">
     <div class="hero-bg" id="heroBg"></div>
-    <video class="hero-video" autoplay muted loop playsinline poster="images/IMG_2998.jpeg">
-        <source src="hero.mp4" type="video/mp4">
-    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <span class="hero-label">Isola di Ponza · Via Scotti</span>
@@ -1005,7 +1000,7 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item g1 fade-in" onclick="openLightbox(0)">
-                <img src="images/IMG_2995.jpeg" alt="Vista panoramica terrazza e colline">
+                <img src="images/facade_rosa.jpeg" alt="Facciata rosa La Maison Fiorita">
                 <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
             </div>
             <div class="gallery-item g2 fade-in" onclick="openLightbox(1)">
@@ -1175,6 +1170,7 @@
                 <p>Via Scotti</p>
                 <p>Isola di Ponza</p>
                 <p>04027 Latina, Italia</p>
+                <p style="font-size:0.78rem;color:var(--text-light);margin-top:12px;letter-spacing:0.03em;">CIN IT059018C1S28D66AH</p>
             </div>
             <div class="contact-card">
                 <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
@@ -1183,6 +1179,9 @@
                 <a href="https://wa.me/393398560980" class="btn btn-whatsapp" style="margin-top:16px;font-size:0.8rem;padding:12px 24px;" target="_blank">
                     <i class="fab fa-whatsapp"></i> Scrivici ora
                 </a>
+            </div>
+            <div class="contact-card" style="grid-column: span 2; padding: 0; overflow: hidden; border-radius: 2px;">
+                <img src="images/mattonella.jpeg" alt="B&B La Maison Fiorita — insegna artigianale" style="width:100%;height:320px;object-fit:cover;display:block;">
             </div>
         </div>
     </div>
@@ -1230,8 +1229,8 @@
 </button>
 
 <script>
-    // ── Hero fallback bg (for browsers without video support)
-    document.getElementById('heroBg').style.backgroundImage = `url('images/IMG_2998.jpeg')`;
+    // ── Hero fallback bg
+    document.getElementById('heroBg').style.backgroundImage = `url('images/hero_alba.jpeg')`;
 
     // ── Header scroll
     const header = document.getElementById('header');
@@ -1270,7 +1269,7 @@
 
     // ── Lightbox
     const galleryImages = [
-        { src: 'images/IMG_2995.jpeg', alt: 'Vista panoramica terrazza e colline' },
+        { src: 'images/facade_rosa.jpeg', alt: 'Facciata rosa La Maison Fiorita' },
         { src: 'images/IMG_2922.jpeg', alt: 'Camera da letto vista mare' },
         { src: 'images/IMG_2927.jpeg', alt: 'Terrazzo con vista borgo' },
         { src: 'images/IMG_2928.jpeg', alt: 'Bagno azzurro' },
