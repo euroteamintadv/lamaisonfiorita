@@ -1008,7 +1008,7 @@
                 <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
             </div>
             <div class="gallery-item g3 fade-in" onclick="openLightbox(2)">
-                <img src="images/IMG_2927.jpeg" alt="Terrazzo con vista borgo">
+                <img src="images/IMG_3007.jpeg" alt="Dependance e giardino mediterraneo">
                 <div class="gallery-item-overlay"><i class="fas fa-expand"></i></div>
             </div>
             <div class="gallery-item g4 fade-in" onclick="openLightbox(3)">
@@ -1163,27 +1163,38 @@
             <h2 class="section-title">Come <em>raggiungerci</em></h2>
             <div class="divider"></div>
         </div>
-        <div class="contact-grid fade-in">
-            <div class="contact-card">
-                <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <h3>Indirizzo</h3>
-                <p>Via Scotti</p>
-                <p>Isola di Ponza</p>
-                <p>04027 Latina, Italia</p>
-                <p style="font-size:0.78rem;color:var(--text-light);margin-top:12px;letter-spacing:0.03em;">CIN IT059018C1S28D66AH</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;" class="fade-in">
+            <!-- Foto sinistra -->
+            <div style="border-radius:2px;overflow:hidden;min-height:400px;">
+                <img src="images/mattonella.jpeg" alt="B&B La Maison Fiorita — insegna artigianale" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
-            <div class="contact-card">
-                <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
-                <h3>Telefono & WhatsApp</h3>
-                <p>+39 339 856 0980 (WhatsApp)</p>
-                <a href="https://wa.me/393398560980" class="btn btn-whatsapp" style="margin-top:16px;font-size:0.8rem;padding:12px 24px;" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Scrivici ora
-                </a>
-            </div>
-            <div class="contact-card" style="grid-column: span 2; padding: 0; overflow: hidden; border-radius: 2px;">
-                <img src="images/mattonella.jpeg" alt="B&B La Maison Fiorita — insegna artigianale" style="width:100%;height:320px;object-fit:cover;display:block;">
+            <!-- 2 card destra -->
+            <div style="display:flex;flex-direction:column;gap:24px;">
+                <div class="contact-card" style="flex:1;">
+                    <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Indirizzo</h3>
+                    <p>Via Scotti</p>
+                    <p>Isola di Ponza</p>
+                    <p>04027 Latina, Italia</p>
+                    <p style="font-size:0.78rem;color:var(--text-light);margin-top:12px;letter-spacing:0.03em;">CIN IT059018C1S28D66AH</p>
+                </div>
+                <div class="contact-card" style="flex:1;">
+                    <div class="contact-card-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>WhatsApp</h3>
+                    <p>+39 339 856 0980</p>
+                    <a href="https://wa.me/393398560980" class="btn btn-whatsapp" style="margin-top:16px;font-size:0.8rem;padding:12px 24px;" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Scrivici ora
+                    </a>
+                </div>
             </div>
         </div>
+        <style>
+        @media (max-width: 768px) {
+            #contact .fade-in[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        </style>
     </div>
 </section>
 
@@ -1271,20 +1282,19 @@
     const galleryImages = [
         { src: 'images/facade_rosa.jpeg', alt: 'Facciata rosa La Maison Fiorita' },
         { src: 'images/IMG_2922.jpeg', alt: 'Camera da letto vista mare' },
-        { src: 'images/IMG_2927.jpeg', alt: 'Terrazzo con vista borgo' },
+        { src: 'images/IMG_3007.jpeg', alt: 'Dependance e giardino mediterraneo' },
         { src: 'images/IMG_2928.jpeg', alt: 'Bagno azzurro' },
         { src: 'images/IMG_2991.jpeg', alt: 'Vista giardino dall\'alto' },
-        { src: 'images/0b819660-1e31-412a-9dad-09db20475e39.jpeg', alt: 'Giardino con bouganville' },
+        { src: 'images/0b819660-1e31-412a-9dad-09db20475e39.jpeg', alt: 'Giardino con bouganville viola' },
         { src: 'images/IMG_2998.jpeg', alt: 'Porto di Ponza al tramonto' },
         { src: 'images/IMG_2568.jpeg', alt: 'Porto di Ponza' },
         { src: 'images/IMG_2944.jpeg', alt: 'Terrazza con vista porto' },
         { src: 'images/77a23539-6b22-4d2e-a239-c6efbd3e2c0e.jpeg', alt: 'Bouganville rossa' },
         { src: 'images/IMG_3105.jpeg', alt: 'Vicolo ponzese' },
         { src: 'images/IMG_2996.jpeg', alt: 'Vista tramonto' },
-        { src: 'images/IMG_2925.jpeg', alt: 'Camera singola' },
-        { src: 'images/IMG_2930.jpeg', alt: 'Studio interno' },
-        { src: 'images/IMG_2932.jpeg', alt: 'Terrazza esterna' },
         { src: 'images/IMG_3002.jpeg', alt: 'Facciata rosa' },
+        { src: 'images/IMG_2927.jpeg', alt: 'Terrazzo vista borgo' },
+        { src: 'images/hero_alba.jpeg', alt: 'Alba sull\'isola di Ponza' },
     ];
 
     let currentIndex = 0;
